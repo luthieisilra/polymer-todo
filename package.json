@@ -1,0 +1,24 @@
+{
+  "name": "todo-app",
+  "description": "task manager",
+  "main": "todo-app.js",
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0",
+    "browser-sync": "^2.26.3",
+    "concurrently": "^4.0.1"
+
+  },
+  "devDependencies": {
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
+    "@polymer/test-fixture": "^4.0.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "wct-mocha": "^1.0.0"
+  },
+  "scripts": {
+    "start":"concurrently 'npm run serve' 'npm run watch'",
+    "serve": "polymer serve --port 8082",
+    "watch": "browser-sync start --proxy localhost:8082 --open \"src/components\" --files \"**/*.js\""
+  }
+}
